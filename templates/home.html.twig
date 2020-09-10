@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+    <div class='columns'>
+  <div class='container profile'>
+    <div class='modal' id='edit-preferences-modal'>
+      <div class='modal-background'></div>
+      <div class='modal-card'>
+        <header class='modal-card-head'>
+      </div>
+    </div>
+    <div class='section profile-heading'>
+      <div class='columns is-mobile is-multiline'>
+        <div class='column is-2'>
+          <span class='header-icon user-profile-image'>
+          {% if user.picture %}
+                <img alt="User picture" src= {{asset( user.picture) }}>
+
+          {% else %}
+            <p>Vous n"avez pas encore de photos, veuillez update votre profile et en rajoutez une.</p>
+          {% endif %}
+          </span>
+        </div>
+        <div class='column is-4-tablet is-10-mobile name'>
+          <p>
+            <span class='title is-bold'>{{user.name }} {{user.prename}}</span>
+            <br>
+            <a class='button is-primary is-outlined' href='/profile' id='edit-preferences' style='margin: 5px 0'>
+              Edit
+            </a>
+            <br>
+          </p>
+        </div>
+        <div class='column is-2-tablet is-4-mobile has-text-centered'>
+          <p class='stat-val'>Email</p>
+          <p class='stat-key'>{{user.email}}</p>
+        </div>
+        <div class='column is-2-tablet is-4-mobile has-text-centered'>
+          <p class='stat-val'>Birthday</p>
+          <p class='stat-key'>{{user.Birthday|date("Y-m-d")}}</p>
+        </div>
+    </div>
+          </p>
+        </div>
+      </div>
+    </div>
+        <br>
+      </div>
+        <br>
+      </div>
+        <br>
+      </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

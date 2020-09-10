@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+{% block title %}Connexion{% endblock %}
+{% block body %}
+
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+         {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+            <form action="{{ path('login') }}" method="post" >
+            <div class="field">
+              <label for="username" class="label">Email</label>
+              <div class="control has-icons-left">
+                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" id="username" name="_username" value="{{ last_email }}">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="password" class="label">Password</label>
+              <div class="control has-icons-left">
+                <input  type="password" placeholder="*******" class="input" id="password" name="_password">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+            </div>
+              <button class="button is-success">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

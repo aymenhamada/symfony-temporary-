@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+{% block title %}Edit{% endblock %}
+
+
+
+{% block body %}
+    <div id="app">
+        <div class="section">
+        <div class="container">
+        <div class="media is-pulled-right">
+            <div class="media-content">
+            <div class="field is-grouped">
+                <div class="control">
+                <div class="g-signin2"></div>
+                </div>
+                <div class="control">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="title">Edit your profile</div>
+           {{ form_start(form) }}
+            <div style="color: red">
+                {% if errors %}
+                    {% for error in errors %}
+                        <p>{{error}}</p>
+                    {% endfor %}
+
+                {% endif %}
+            </div>
+            <div class="field">
+            <div class="control">
+
+                    {{ form_row(form.birthday, {'label': 'Birthday', 'type': 'date', 'value': user.birthday, 'attr': {'class':'input'}}) }}
+            </div>
+            <div class="columns row-one">
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.name, {'label': 'Nom', 'value': user.name, 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.prename, {'label': 'Prénom', 'value': user.prename, 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.adresses, {'label': 'Adresse', 'value': user.adresses, 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.picture, {'label': 'Picture', 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary is-medium" type="submit">Edit My Profile !</button>
+                </div>
+            </div>
+            </div>
+        {{ form_end(form) }}
+        </div>
+    </div>
+    </div>
+{% endblock %}

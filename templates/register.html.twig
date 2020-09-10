@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+{% block title %}Register{% endblock %}
+
+
+
+{% block body %}
+    <div id="app">
+        <div class="section">
+        <div class="container">
+        <div class="media is-pulled-right">
+            <div class="media-content">
+            <div class="field is-grouped">
+                <div class="control">
+                <div class="g-signin2"></div>
+                </div>
+                <div class="control">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="title">Inscrivez-vous</div>
+        <div class="subtitle">Avec votre email !</div>
+           {{ form_start(form) }}
+            <div style="color: red">
+                {{ form_errors(form) }}
+            </div>
+            <div class="field">
+            <div class="control">
+                    {{ form_row(form.email, {'label': 'Email', 'attr': {'class':'input'}}) }}
+            </div>
+            <div class="columns row-one">
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.name, {'label': 'Nom', 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.prename, {'label': 'Prénom', 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.plainPassword.first, {'label': 'Mot de passe', 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+                <div class="column">
+                <div class="control">
+                    {{ form_row(form.plainPassword.second, {'label': 'Confirmez votre mot de passe', 'attr': {'class':'input'}}) }}
+                </div>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary is-medium" type="submit">Register</button>
+                </div>
+            </div>
+            </div>
+        {{ form_end(form) }}
+        </div>
+    </div>
+    </div>
+{% endblock %}

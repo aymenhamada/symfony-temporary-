@@ -1,0 +1,15 @@
+home:
+  path: /
+  controller: App\Controller\HomeController::home
+
+register:
+    path: /register
+    controller: App\Controller\UserController::register
+
+security_logout:
+  path: /logout
+  controller: App\Controller\UserController::logout
+
+profile:
+  path: /profile
+  controller: App\Controller\UserController::editProfile
